@@ -1,0 +1,13 @@
+.contenedorModule {
+    width: 75%;
+    height: 6rem;
+    padding: 0.25rem;
+    border: 1px white solid;
+    border-radius: 50px;
+}
+
+.parrafoModule {
+    font-size: 1.5rem;
+    color: #9c9cfd;
+    padding-left: 1rem;
+}
