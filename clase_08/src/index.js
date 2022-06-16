@@ -1,11 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
-import Routes from "./routes/Routes";
+
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./styles/GlobalStyles";
-import { AuthProvider } from "./context/AuthContext";
+
 import { BrowserRouter } from "react-router-dom";
+import Routes from "./routes/Routes";
 
 const tokyoDark = {
   name: "tokyoDark",

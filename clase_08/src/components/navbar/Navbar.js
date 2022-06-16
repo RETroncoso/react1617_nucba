@@ -6,6 +6,7 @@ import {
 } from "./NavbarStyles";
 import Separador from "../separador/Separador";
 import { useNavigate } from "react-router-dom";
+import { LinkItem } from "../linkItem/LinkItem";
 
 function Navbar() {
   const navigate = useNavigate();
@@ -20,7 +21,8 @@ function Navbar() {
       </LogoStyled>
       <NavbarStyled>
         <Separador />
-        Holu, aca van a ir los links a las rutas
+        <LinkItem to="product">Producto</LinkItem>
+        <LinkItem to="contacto">Contacto</LinkItem>
         <Separador />
       </NavbarStyled>
     </NavbarContainerStyled>
