@@ -1,4 +1,3 @@
-import React, { useContext, useEffect } from "react";
 import Panel from "../../components/panel/Panel";
 import FieldSet from "../../components/fieldSet/FieldSet";
 import Button from "../../components/button/Button";
@@ -7,11 +6,12 @@ import {
   LoginSectionStyled,
   LoginTitleStyled,
 } from "./LoginStyles";
+import { useContext, useEffect } from "react";
 import AuthContext from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-  const { handleSubmit, form, isAuth } = useContext(AuthContext);
+  const { handlerSubmit, form, isAuth } = useContext(AuthContext);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -28,8 +28,8 @@ function Login() {
           <FieldSet
             type="text"
             placeholder="Escribí tu username..."
-            id="username"
             value={form.username}
+            id="username"
             name="username"
             label="User"
             maxLength={10}
@@ -38,9 +38,9 @@ function Login() {
           <FieldSet
             type="password"
             placeholder="Escribí tu contraseña..."
+            value={form.password}
             id="password"
             name="password"
-            value={form.password}
             label="Password"
             error="Este campo es requerido"
           />
@@ -49,7 +49,7 @@ function Login() {
             primary
             type="submit"
             onClick={(e) => {
-              handleSubmit(e);
+              handlerSubmit(e);
             }}
           >
             Enviar!

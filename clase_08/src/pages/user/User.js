@@ -1,9 +1,10 @@
-import React, { useContext } from "react";
-import { useParams } from "react-router-dom";
+import { useContext } from "react";
 import Button from "../../components/button/Button";
 import Panel from "../../components/panel/Panel";
 import Title from "../../components/title/Title";
 import AuthContext from "../../context/AuthContext";
+import { useParams } from "react-router-dom";
+
 import {
   ContainerButtonStyled,
   LogoutIcon,
@@ -12,7 +13,7 @@ import {
 
 const User = () => {
   const { username } = useParams();
-  const { handleLogout } = useContext(AuthContext);
+  const { handlerLogout } = useContext(AuthContext);
 
   return (
     <UserContainerStyled>
@@ -23,7 +24,12 @@ const User = () => {
         Router y Nucba{" "}
       </Panel>
       <ContainerButtonStyled>
-        <Button primary onClick={() => handleLogout()}>
+        <Button
+          primary
+          onClick={() => {
+            handlerLogout();
+          }}
+        >
           {" "}
           Cerrar sesión <LogoutIcon />{" "}
         </Button>

@@ -12,6 +12,7 @@ const AuthProvider = ({ children }) => {
   const [isAuth, setIsAuth] = useState(false);
   const [form, setForm] = useState(initialState);
   const [user, setUser] = useState("");
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,14 +22,14 @@ const AuthProvider = ({ children }) => {
     }
   }, []);
 
-  const handleChange = (e) => {
+  const handlerChange = (e) => {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handlerSubmit = (e) => {
     e.preventDefault();
 
     if (!form.username.trim() || !form.password.trim()) {
@@ -45,14 +46,21 @@ const AuthProvider = ({ children }) => {
     navigate(`/usuario/${form.username}`);
   };
 
-  const handleLogout = () => {
+  const handlerLogout = () => {
     localStorage.removeItem("user");
     navigate("/login");
     setIsAuth(false);
     setUser("");
   };
 
-  const data = { isAuth, form, user, handleChange, handleSubmit, handleLogout };
+  const data = {
+    isAuth,
+    form,
+    user,
+    handlerChange,
+    handlerSubmit,
+    handlerLogout,
+  };
 
   return <AuthContext.Provider value={data}>{children}</AuthContext.Provider>;
 };

@@ -7,6 +7,7 @@ import { GlobalStyles } from "./styles/GlobalStyles";
 
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./routes/Routes";
+import { AuthProvider } from "./context/AuthContext";
 
 const tokyoDark = {
   name: "tokyoDark",
@@ -48,7 +49,9 @@ root.render(
     <GlobalStyles />
     <ThemeProvider theme={tokyoDark}>
       <BrowserRouter>
-        <Routes />
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
       </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
