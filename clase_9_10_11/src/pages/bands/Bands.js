@@ -8,6 +8,7 @@ import Loader from "../../components/loader/Loader";
 import { BandsContainerStyled, BandsErrorMessageStyled } from "./BandsStyles";
 import { Box, Button } from "@mui/material";
 import { useBandsData } from "../../hooks/useBandsData";
+import FormModal from "../../components/Modal/Modal";
 
 const Bands = () => {
   const { data, isLoading, isError, error } = useBandsData();
@@ -23,6 +24,8 @@ const Bands = () => {
         {data?.data.map((band) => (
           <Card key={band.id} {...band} />
         ))}
+
+        <FormModal />
       </BandsContainerStyled>
     </>
   );
